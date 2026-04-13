@@ -1,0 +1,156 @@
+.bills-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 1.35rem;
+  align-items: stretch;
+}
+
+.bills-info-panel {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bills-info-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 110, 30, 0.12), transparent 32%),
+    radial-gradient(circle at 82% 24%, rgba(0, 160, 255, 0.12), transparent 34%);
+  opacity: 0.95;
+}
+
+.bills-info-panel p,
+.bills-info-panel .bills-points,
+.bills-info-panel .bills-note {
+  position: relative;
+  z-index: 1;
+}
+
+.bills-info-panel p {
+  font-size: 1.03rem;
+  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.bills-points {
+  margin: 1.2rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.bills-points li {
+  position: relative;
+  padding: 0.95rem 1rem 0.95rem 2.9rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 600;
+  line-height: 1.58;
+  font-size: 1rem;
+}
+
+.bills-points li::before {
+  content: "✓";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: white;
+  background: linear-gradient(90deg, #ff7a18, #0fa958);
+  box-shadow: 0 0 12px rgba(255, 122, 24, 0.22);
+}
+
+.bills-note {
+  margin-top: 1.4rem;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.bills-note strong {
+  color: #f4f7fb;
+  font-size: 0.98rem;
+}
+
+.bills-note span {
+  color: rgba(255, 255, 255, 0.74);
+  line-height: 1.58;
+  font-size: 0.96rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-field + .form-field {
+  margin-top: 1rem;
+}
+
+.form-field label {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #8ee9ff;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: white;
+  border-radius: 16px;
+  padding: 1rem;
+  outline: none;
+  font: inherit;
+  font-size: 1rem;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: rgba(0, 170, 255, 0.45);
+  box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.08);
+}
+
+.file-name {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.bills-submit {
+  border: 0;
+  cursor: pointer;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .bills-layout {
+    grid-template-columns: 1fr;
+  }
+}

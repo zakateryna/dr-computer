@@ -1,0 +1,91 @@
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(10, 20, 40, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 1.75rem;
+  box-shadow:
+    0 16px 32px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.service-card-fire::before {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 90, 40, 0.18), transparent 32%);
+}
+
+.service-card-water::before {
+  background:
+    radial-gradient(circle at 82% 20%, rgba(0, 160, 255, 0.18), transparent 32%);
+}
+
+.service-card-mix::before {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 90, 40, 0.14), transparent 28%),
+    radial-gradient(circle at 82% 24%, rgba(0, 160, 255, 0.14), transparent 30%);
+}
+
+.service-icon {
+  position: relative;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 1.75rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.service-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 0.85rem;
+  font-size: 1.35rem;
+  color: #f4f7fb;
+}
+
+.service-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.72;
+  font-size: 1.02rem;
+}
+
+.service-link {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  margin-top: 1.25rem;
+  text-decoration: none;
+  font-weight: 700;
+  color: #8ee9ff;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

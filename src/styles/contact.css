@@ -1,0 +1,315 @@
+.contact-section-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.contact-content {
+  max-width: 760px;
+}
+
+.contact-modern-card {
+  position: relative;
+  overflow: hidden;
+  margin-top: 2rem;
+  max-width: 100%;
+}
+
+.contact-modern-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 90, 40, 0.12), transparent 30%),
+    radial-gradient(circle at 85% 25%, rgba(0, 160, 255, 0.12), transparent 32%);
+  opacity: 0.95;
+}
+
+.contact-modern-top,
+.contact-modern-features,
+.contact-modern-actions {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-modern-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+.contact-modern-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-modern-badge {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  color: #8ee9ff;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(142, 233, 255, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.contact-modern-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #f4f7fb;
+}
+
+.contact-modern-text {
+  margin: 0;
+  max-width: 620px;
+  font-size: 1.08rem;
+  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.contact-modern-number-wrap {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.contact-modern-label {
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8ee9ff;
+}
+
+.contact-modern-number {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.contact-modern-number:hover {
+  color: #8ee9ff;
+}
+
+.contact-modern-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.7rem;
+}
+
+.contact-feature {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 46px;
+  padding: 0.78rem 1rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.contact-feature-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: #8ee9ff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-modern-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.85rem;
+}
+
+.contact-modern-phone,
+.contact-modern-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 60px;
+  padding: 1rem 1.35rem;
+  border-radius: 18px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.contact-modern-phone {
+  color: #8ee9ff;
+  background: rgba(8, 20, 44, 0.9);
+  border: 1px solid rgba(142, 233, 255, 0.2);
+  box-shadow: 0 0 18px rgba(0, 140, 255, 0.08);
+}
+
+.contact-modern-phone:hover {
+  transform: translateY(-2px);
+  border-color: rgba(142, 233, 255, 0.45);
+  box-shadow: 0 10px 24px rgba(0, 140, 255, 0.14);
+}
+
+.contact-modern-whatsapp {
+  color: white;
+  background: linear-gradient(90deg, #17c964, #0fa958);
+  box-shadow: 0 0 20px rgba(23, 201, 100, 0.25);
+}
+
+.contact-modern-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(23, 201, 100, 0.32);
+}
+
+.contact-modern-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-media {
+  position: relative;
+  width: 100%;
+}
+
+.contact-media img {
+  display: block;
+  width: 100%;
+  height: 620px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 28px;
+  filter: contrast(1.05) brightness(0.95);
+  transform: scale(1.02);
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(0, 150, 255, 0.1);
+}
+
+.contact-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(2, 4, 10, 0.38),
+    rgba(2, 4, 10, 0.08) 45%,
+    rgba(2, 4, 10, 0.16) 100%
+  );
+}
+
+@media (max-width: 1100px) {
+  .contact-section-layout {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    align-items: start;
+  }
+
+  .contact-content {
+    max-width: 100%;
+  }
+
+  .contact-media img {
+    height: 420px;
+    transform: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-modern-top {
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .contact-modern-title {
+    font-size: 1.35rem;
+  }
+
+  .contact-modern-text {
+    font-size: 1.02rem;
+    line-height: 1.75;
+  }
+
+  .contact-modern-number {
+    font-size: 1.5rem;
+  }
+
+  .contact-modern-features {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-feature {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .contact-modern-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-modern-phone,
+  .contact-modern-whatsapp {
+    width: 100%;
+  }
+
+  .contact-media img {
+    height: 340px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-modern-card {
+    margin-top: 1.5rem;
+  }
+
+  .contact-modern-title {
+    font-size: 1.25rem;
+  }
+
+  .contact-modern-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .contact-modern-number {
+    font-size: 1.35rem;
+  }
+
+  .contact-media img {
+    height: 280px;
+    border-radius: 22px;
+  }
+
+  .contact-media::after {
+    border-radius: 22px;
+  }
+}
