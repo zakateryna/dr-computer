@@ -30,19 +30,19 @@ export default function Footer() {
 
           <div className="footer-col">
             <h4 className="footer-title">Navigazione</h4>
-            <a href="#servizi" className="footer-link">
+            <a href="/servizi" className="footer-link">
               Servizi
             </a>
-            <a href="#chi-siamo" className="footer-link">
+            <a href="/chi-siamo" className="footer-link">
               Chi siamo
             </a>
-            <a href="#bollette" className="footer-link">
+            <a href="/bollette" className="footer-link">
               Bollette e fornitori
             </a>
-            <a href="#dove-siamo" className="footer-link">
+            <a href="/dove-siamo" className="footer-link">
               Dove siamo
             </a>
-            <a href="#contatti" className="footer-link">
+            <a href="/contatti" className="footer-link">
               Contatti
             </a>
           </div>

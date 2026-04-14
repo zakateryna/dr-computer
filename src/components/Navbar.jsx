@@ -12,12 +12,7 @@ export default function Navbar() {
   }
 
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-
+    document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
@@ -26,7 +21,7 @@ export default function Navbar() {
   return (
     <header className="site-header">
       <nav className="site-nav">
-        <a href="#top" className="nav-brand" onClick={handleClose}>
+        <a href="/home" className="nav-brand" onClick={handleClose}>
           <span className="nav-brand-mark">dr</span>
           <span className="nav-brand-text">COMPUTER</span>
         </a>
@@ -48,23 +43,19 @@ export default function Navbar() {
           id="mobile-menu"
           className={`nav-links ${menuOpen ? "is-open" : ""}`}
         >
-          <a href="#servizi" className="nav-link" onClick={handleClose}>
+          <a href="/servizi" className="nav-link" onClick={handleClose}>
             Servizi
           </a>
-          <a href="#chi-siamo" className="nav-link" onClick={handleClose}>
+          <a href="/chi-siamo" className="nav-link" onClick={handleClose}>
             Chi siamo
           </a>
-          <a href="#bollette" className="nav-link" onClick={handleClose}>
+          <a href="/bollette" className="nav-link" onClick={handleClose}>
             Bollette
           </a>
-          <a href="#dove-siamo" className="nav-link" onClick={handleClose}>
+          <a href="/dove-siamo" className="nav-link" onClick={handleClose}>
             Dove siamo
           </a>
-          <a
-            href="#contatti"
-            className="nav-link nav-cta"
-            onClick={handleClose}
-          >
+          <a href="/contatti" className="nav-link nav-cta" onClick={handleClose}>
             Contatti
           </a>
         </div>
