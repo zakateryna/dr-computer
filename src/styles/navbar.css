@@ -3,9 +3,18 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 30;
-  padding: 1.2rem 1.5rem;
+  z-index: 1000;
+  padding: 1.2rem 1.5rem 1rem;
 }
+
+#servizi,
+#chi-siamo,
+#bollette,
+#dove-siamo,
+#contatti {
+  scroll-margin-top: 50px;
+}
+
 
 .site-nav {
   width: min(1240px, 100%);
