@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,6 +14,7 @@ export default function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
+
     return () => {
       document.body.style.overflow = "";
     };
@@ -21,10 +23,10 @@ export default function Navbar() {
   return (
     <header className="site-header">
       <nav className="site-nav">
-        <a href="/home" className="nav-brand" onClick={handleClose}>
+        <Link to="/home" className="nav-brand" onClick={handleClose}>
           <span className="nav-brand-mark">dr</span>
           <span className="nav-brand-text">COMPUTER</span>
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -43,21 +45,25 @@ export default function Navbar() {
           id="mobile-menu"
           className={`nav-links ${menuOpen ? "is-open" : ""}`}
         >
-          <a href="/servizi" className="nav-link" onClick={handleClose}>
+          <Link to="/servizi" className="nav-link" onClick={handleClose}>
             Servizi
-          </a>
-          <a href="/chi-siamo" className="nav-link" onClick={handleClose}>
+          </Link>
+          <Link to="/chi-siamo" className="nav-link" onClick={handleClose}>
             Chi siamo
-          </a>
-          <a href="/bollette" className="nav-link" onClick={handleClose}>
+          </Link>
+          <Link to="/bollette" className="nav-link" onClick={handleClose}>
             Bollette
-          </a>
-          <a href="/dove-siamo" className="nav-link" onClick={handleClose}>
+          </Link>
+          <Link to="/dove-siamo" className="nav-link" onClick={handleClose}>
             Dove siamo
-          </a>
-          <a href="/contatti" className="nav-link nav-cta" onClick={handleClose}>
+          </Link>
+          <Link
+            to="/contatti"
+            className="nav-link nav-cta"
+            onClick={handleClose}
+          >
             Contatti
-          </a>
+          </Link>
         </div>
       </nav>
     </header>

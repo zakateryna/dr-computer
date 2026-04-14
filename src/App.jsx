@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -14,8 +14,9 @@ import "./index.css";
 function ScrollToSection() {
   const location = useLocation();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const pathToId = {
+      "/": "top",
       "/home": "top",
       "/servizi": "servizi",
       "/chi-siamo": "chi-siamo",
@@ -24,17 +25,18 @@ function ScrollToSection() {
       "/contatti": "contatti",
     };
 
-    const targetId = pathToId[location.pathname];
-
-    if (!targetId) {
-      window.scrollTo(0, 0);
-      return;
-    }
+    const targetId = pathToId[location.pathname] || "top";
 
     requestAnimationFrame(() => {
-      const el = document.getElementById(targetId);
-      if (el) {
-        el.scrollIntoView({ behavior: "auto", block: "start" });
+      const element = document.getElementById(targetId);
+
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      } else {
+        window.scrollTo(0, 0);
       }
     });
   }, [location.pathname]);
