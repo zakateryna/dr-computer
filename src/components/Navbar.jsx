@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,6 +11,18 @@ export default function Navbar() {
     setMenuOpen(false);
   }
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   return (
     <header className="site-header">
       <nav className="site-nav">
@@ -22,7 +34,7 @@ export default function Navbar() {
         <button
           type="button"
           className={`nav-toggle ${menuOpen ? "is-open" : ""}`}
-          aria-label="Apri menu"
+          aria-label={menuOpen ? "Chiudi menu" : "Apri menu"}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           onClick={handleToggle}

@@ -12,9 +12,8 @@
 #bollette,
 #dove-siamo,
 #contatti {
-  scroll-margin-top: 50px;
+  scroll-margin-top: 40px;
 }
-
 
 .site-nav {
   width: min(1240px, 100%);
@@ -25,7 +24,7 @@
   justify-content: space-between;
   gap: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(7, 12, 24, 0.28);
+  background: rgba(7, 12, 24, 0.58);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 999px;
@@ -157,29 +156,49 @@
     padding: 1rem 0.85rem;
   }
 
+  #servizi,
+  #chi-siamo,
+  #bollette,
+  #dove-siamo,
+  #contatti {
+    scroll-margin-top: 50px;
+  }
+
   .site-nav {
     position: relative;
     border-radius: 24px;
     padding: 0.85rem 0.9rem;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow: visible;
   }
 
   .nav-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
   }
 
   .nav-links {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
     display: none;
-    width: 100%;
-    margin-top: 0.85rem;
-    padding-top: 0.85rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 0;
+    padding: 1rem;
+    border-top: 0;
+    border-radius: 24px;
     flex-direction: column;
     align-items: stretch;
     gap: 0.45rem;
+    background: rgba(7, 12, 24, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    z-index: 50;
   }
 
   .nav-links.is-open {
