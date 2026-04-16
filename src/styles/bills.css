@@ -1,16 +1,26 @@
+.bills-page {
+  padding-top: 1rem;
+}
+
+.bills-page-hero {
+  padding-top: 2rem;
+  padding-bottom: 0;
+}
+
+.bills-support-section {
+  padding-top: 1.5rem;
+}
+
 .bills-layout {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 1.35rem;
-  align-items: stretch;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1fr);
+  gap: 1.8rem;
+  align-items: start;
 }
 
 .bills-info-panel {
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .bills-info-panel::before {
@@ -18,139 +28,177 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background:
-    radial-gradient(circle at 18% 18%, rgba(255, 110, 30, 0.12), transparent 32%),
-    radial-gradient(circle at 82% 24%, rgba(0, 160, 255, 0.12), transparent 34%);
   opacity: 0.95;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(255, 90, 40, 0.1), transparent 30%),
+    radial-gradient(circle at 82% 24%, rgba(0, 160, 255, 0.1), transparent 32%);
 }
 
-.bills-info-panel p,
-.bills-info-panel .bills-points,
-.bills-info-panel .bills-note {
+.bills-info-panel > * {
   position: relative;
   z-index: 1;
 }
 
-.bills-info-panel p {
-  font-size: 1.03rem;
-  line-height: 1.78;
+.bills-info-title {
+  margin: 0 0 0.8rem;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  color: #f4f7fb;
+}
+
+.bills-info-text {
+  margin: 0;
   color: rgba(255, 255, 255, 0.84);
+  line-height: 1.72;
 }
 
 .bills-points {
   margin: 1.2rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 0.9rem;
-}
-
-.bills-points li {
-  position: relative;
-  padding: 0.95rem 1rem 0.95rem 2.9rem;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding-left: 1.1rem;
   color: rgba(255, 255, 255, 0.88);
-  font-weight: 600;
-  line-height: 1.58;
-  font-size: 1rem;
-}
-
-.bills-points li::before {
-  content: "✓";
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1.25rem;
-  height: 1.25rem;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: white;
-  background: linear-gradient(90deg, #ff7a18, #0fa958);
-  box-shadow: 0 0 12px rgba(255, 122, 24, 0.22);
+  line-height: 1.8;
 }
 
 .bills-note {
   margin-top: 1.4rem;
-  padding: 1rem 1.1rem;
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
 }
 
 .bills-note strong {
   color: #f4f7fb;
-  font-size: 0.98rem;
 }
 
 .bills-note span {
-  color: rgba(255, 255, 255, 0.74);
-  line-height: 1.58;
-  font-size: 0.96rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+}
+
+.bills-form {
+  display: grid;
+  gap: 1rem;
+  padding: 1.35rem;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .form-field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.form-field + .form-field {
-  margin-top: 1rem;
+  display: grid;
+  gap: 0.45rem;
 }
 
 .form-field label {
-  font-size: 0.96rem;
+  font-size: 0.94rem;
   font-weight: 700;
-  color: #8ee9ff;
+  color: #f4f7fb;
 }
 
 .form-field input,
 .form-field textarea {
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(8, 20, 44, 0.76);
   color: white;
   border-radius: 16px;
-  padding: 1rem;
-  outline: none;
+  padding: 0.95rem 1rem;
   font: inherit;
-  font-size: 1rem;
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 130px;
 }
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-  color: rgba(255, 255, 255, 0.45);
-}
-
-.form-field input:focus,
-.form-field textarea:focus {
-  border-color: rgba(0, 170, 255, 0.45);
-  box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.08);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .file-name {
-  margin: 0.25rem 0 0;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.72);
+  margin: 0.15rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .bills-submit {
-  border: 0;
-  cursor: pointer;
-  margin-top: 1.25rem;
+  width: 100%;
+  margin-top: 0.2rem;
+}
+
+.bills-success {
+  margin-top: 0.2rem;
+  color: #9df3b0;
+  font-weight: 600;
+}
+
+.bills-error {
+  margin-top: 0.2rem;
+  color: #ff9b9b;
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .bills-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 900px) {
-  .bills-layout {
-    grid-template-columns: 1fr;
+  .bills-page-hero {
+    padding-top: 1.4rem;
+  }
+
+  .bills-support-section {
+    padding-top: 1rem;
+  }
+
+  .bills-info-title {
+    font-size: 1.25rem;
+  }
+
+  .bills-info-text,
+  .bills-note span,
+  .bills-points {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .bills-form {
+    padding: 1.1rem;
+    border-radius: 24px;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    padding: 0.9rem 0.95rem;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .bills-form {
+    padding: 1rem;
+    border-radius: 22px;
+  }
+
+  .bills-info-panel {
+    border-radius: 22px;
+  }
+
+  .bills-info-title {
+    font-size: 1.15rem;
+  }
+
+  .file-name {
+    font-size: 0.86rem;
   }
 }

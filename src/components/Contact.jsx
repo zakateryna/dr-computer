@@ -11,7 +11,10 @@ export default function Contact() {
     <section className="section" id="contatti">
       <div className="section-shell">
         <div className="contact-section-layout">
-          {/* LEFT */}
+          <div className="contact-media">
+            <img src="/negozio.png" alt="Negozio dr COMPUTER" />
+          </div>
+
           <div className="contact-content">
             <h2 className="section-title">Contattaci</h2>
 
@@ -36,20 +39,6 @@ export default function Contact() {
                     Supporto pratico e contatto semplice per ricevere aiuto su
                     computer, software, stampanti, dispositivi e consulenze.
                   </p>
-
-                  <div className="contact-modern-number-wrap">
-                    <span className="contact-modern-label">
-                      Telefono diretto
-                    </span>
-
-                    <a
-                      href="tel:+393935820768"
-                      className="contact-modern-number"
-                      aria-label="Chiama il numero 393 582 0768"
-                    >
-                      +39 393 582 0768
-                    </a>
-                  </div>
                 </div>
               </div>
 
@@ -95,11 +84,6 @@ export default function Contact() {
                 </a>
               </div>
             </div>
-          </div>
-
-          {/* RIGHT */}
-          <div className="contact-media">
-            <img src="/negozio.png" alt="Negozio dr COMPUTER" />
           </div>
         </div>
       </div>

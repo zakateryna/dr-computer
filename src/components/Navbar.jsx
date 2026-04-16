@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
   function handleToggle() {
     setMenuOpen((prev) => !prev);
@@ -19,6 +20,10 @@ export default function Navbar() {
       document.body.style.overflow = "";
     };
   }, [menuOpen]);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
 
   return (
     <header className="site-header">
@@ -48,15 +53,8 @@ export default function Navbar() {
           <Link to="/servizi" className="nav-link" onClick={handleClose}>
             Servizi
           </Link>
-          <Link to="/chi-siamo" className="nav-link" onClick={handleClose}>
-            Chi siamo
-          </Link>
-          <Link to="/bollette" className="nav-link" onClick={handleClose}>
-            Bollette
-          </Link>
-          <Link to="/dove-siamo" className="nav-link" onClick={handleClose}>
-            Dove siamo
-          </Link>
+
+
           <Link
             to="/contatti"
             className="nav-link nav-cta"

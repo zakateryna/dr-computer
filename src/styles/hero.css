@@ -64,16 +64,13 @@
   color: white;
 }
 
-.hero-title {
-  margin: 0 0 0.85rem;
-  font-size: clamp(3.35rem, 5.6vw, 5.7rem);
-  font-weight: 900;
-  line-height: 0.95;
-  letter-spacing: -0.05em;
-  color: #f4f7fb;
-  text-shadow:
-    0 2px 0 rgba(255, 255, 255, 0.14),
-    0 12px 24px rgba(0, 0, 0, 0.45);
+.hero-logo {
+  display: block;
+  width: min(520px, 100%);
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: brightness(0) invert(1) drop-shadow(0 12px 24px rgba(0, 0, 0, 0.38));
+  transform: scaleX(1.02) scaleY(0.98);
 }
 
 .hero-subtitle {
@@ -143,8 +140,9 @@
     width: min(1080px, calc(100% - 3rem));
   }
 
-  .hero-title {
-    font-size: 6.2rem;
+  .hero-logo {
+    width: min(620px, 100%);
+    margin-bottom: 1.15rem;
   }
 
   .hero-subtitle {
@@ -173,9 +171,9 @@
     bottom: 6vh;
   }
 
-  .hero-title {
-    font-size: clamp(2.45rem, 8vw, 3.8rem);
-    margin-bottom: 0.65rem;
+  .hero-logo {
+    width: min(300px, 100%);
+    margin-bottom: 0.8rem;
   }
 
   .hero-subtitle {

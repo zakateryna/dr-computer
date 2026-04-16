@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 export default function Hero() {
   return (
     <section className="hero" id="top">
       <div className="hero-bg" />
 
       <div className="hero-content">
-        <h1 className="hero-title">dr COMPUTER</h1>
+        <img src="/logonav.svg" alt="dr COMPUTER" className="hero-logo" />
 
         <p className="hero-subtitle">
           Assistenza tecnica, vendita e riparazione hardware e software,
@@ -13,13 +15,13 @@ export default function Hero() {
         </p>
 
         <div className="hero-actions">
-          <a href="#contatti" className="hero-btn-primary">
+          <Link to="/contatti" className="hero-btn-primary">
             Contattaci
-          </a>
+          </Link>
 
-          <a href="#dove-siamo" className="hero-btn-secondary">
-            Dove siamo
-          </a>
+          <Link to="/bollette" className="hero-btn-secondary">
+            Bollette
+          </Link>
         </div>
       </div>
     </section>

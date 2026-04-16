@@ -1,4 +1,9 @@
-import { MapPin, PhoneCall, MessageCircle } from "lucide-react";
+import {
+  MapPin,
+  PhoneCall,
+  MessageCircle,
+  Navigation,
+} from "lucide-react";
 
 export default function Location() {
   return (
@@ -41,12 +46,24 @@ export default function Location() {
                 </div>
                 <div>
                   <span className="contact-label">WhatsApp</span>
-                  <p>Scrivici rapidamente per richieste, informazioni o supporto.</p>
+                  <p>
+                    Scrivici rapidamente per richieste, informazioni o supporto.
+                  </p>
                 </div>
               </div>
             </div>
 
             <div className="contact-actions">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Via+Piave+39+70038+Terlizzi+BA"
+                target="_blank"
+                rel="noreferrer"
+                className="map-btn"
+              >
+                <Navigation size={18} strokeWidth={2} />
+                <span>Apri su Maps</span>
+              </a>
+
               <a
                 href="https://wa.me/393935820768"
                 target="_blank"
