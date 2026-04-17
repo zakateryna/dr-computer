@@ -20,20 +20,11 @@ await fs.mkdir(uploadsDir, { recursive: true });
 
 app.use(
   cors({
-    origin: (origin, callback) => {
-      const allowedOrigins = [
-        "http://localhost:5173",
-        "http://localhost:5174",
-        "https://dr-computer.it",
-        "https://www.dr-computer.it",
-      ];
-
-      if (!origin || allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
-
-      return callback(new Error("Origin non consentita da CORS: " + origin));
-    },
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "https://www.dr-computer.it",
+    ],
   })
 );
 
