@@ -20,12 +20,20 @@ await fs.mkdir(uploadsDir, { recursive: true });
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "http://localhost:5174",
-      "https://dr-computer.it",
-      "https://www.dr-computer.it",
-    ],
+    origin: (origin, callback) => {
+      const allowedOrigins = [
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "https://dr-computer.it",
+        "https://www.dr-computer.it",
+      ];
+
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Origin non consentita da CORS: " + origin));
+    },
   })
 );
 
@@ -34,7 +42,7 @@ app.use(express.json());
 const upload = multer({
   dest: uploadsDir,
   limits: {
-    fileSize: 5 * 1024 * 1024, // 5 MB
+    fileSize: 5 * 1024 * 1024,
   },
   fileFilter: (req, file, cb) => {
     const allowed = [
