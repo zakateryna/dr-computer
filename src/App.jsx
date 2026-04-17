@@ -1,8 +1,7 @@
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import {
   Routes,
   Route,
-  Navigate,
   useLocation,
   useNavigate,
 } from "react-router-dom";
@@ -17,8 +16,13 @@ import "./index.css";
 function ForceHomeOnRefresh() {
   const location = useLocation();
   const navigate = useNavigate();
+  const hasCheckedReload = useRef(false);
 
   useEffect(() => {
+    if (hasCheckedReload.current) return;
+
+    hasCheckedReload.current = true;
+
     const navEntries = performance.getEntriesByType("navigation");
     const isReload =
       navEntries.length > 0 && navEntries[0].type === "reload";
@@ -26,10 +30,9 @@ function ForceHomeOnRefresh() {
     if (
       isReload &&
       location.pathname !== "/" &&
-      location.pathname !== "/home" &&
       location.pathname !== "/bollette"
     ) {
-      navigate("/home", { replace: true });
+      navigate("/", { replace: true });
     }
   }, [location.pathname, navigate]);
 
@@ -42,7 +45,6 @@ function ScrollToSection() {
   useLayoutEffect(() => {
     const pathToId = {
       "/": "top",
-      "/home": "top",
       "/servizi": "servizi",
       "/contatti": "contatti",
     };
@@ -77,13 +79,8 @@ function HomeLayout() {
       <Hero />
 
       <main className="site-main">
-        <div id="servizi">
-          <ServicesSection />
-        </div>
-
-        <div id="contatti">
-          <ContactSection />
-        </div>
+        <ServicesSection />
+        <ContactSection />
       </main>
 
       <Footer />
@@ -98,8 +95,7 @@ export default function App() {
       <ScrollToSection />
 
       <Routes>
-        <Route path="/" element={<Navigate to="/home" replace />} />
-        <Route path="/home" element={<HomeLayout />} />
+        <Route path="/" element={<HomeLayout />} />
         <Route path="/servizi" element={<HomeLayout />} />
         <Route path="/contatti" element={<HomeLayout />} />
         <Route path="/bollette" element={<BillsPage />} />

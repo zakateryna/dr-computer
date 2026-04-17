@@ -7,9 +7,9 @@ import {
 
 export default function ContactSection() {
   return (
-    <section className="section" id="contatti">
+    <section className="section">
       <div className="section-shell">
-        <div className="contact-section-layout">
+        <div className="contact-section-layout" id="contatti">
           <div className="contact-media">
             <img src="/negozio.png" alt="Negozio dr COMPUTER" />
           </div>

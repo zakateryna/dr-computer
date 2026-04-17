@@ -27,17 +27,14 @@ export default function Footer() {
 
           <div className="footer-col">
             <h4 className="footer-title">Navigazione</h4>
-            <Link to="/home" className="footer-link">
-              Home
-            </Link>
             <Link to="/servizi" className="footer-link">
               Servizi
             </Link>
             <Link to="/bollette" className="footer-link">
-              Bollette e fornitori
+              Bollette
             </Link>
             <Link to="/contatti" className="footer-link">
-              Contatti e sede
+              Contatti
             </Link>
           </div>
         </div>

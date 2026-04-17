@@ -25,10 +25,14 @@ export default function Navbar() {
     setMenuOpen(false);
   }, [location.pathname]);
 
+  const isServices = location.pathname === "/servizi";
+  const isBills = location.pathname === "/bollette";
+  const isContacts = location.pathname === "/contatti";
+
   return (
     <header className="site-header">
       <nav className="site-nav">
-        <Link to="/home" className="nav-brand" onClick={handleClose}>
+        <Link to="/" className="nav-brand" onClick={handleClose}>
           <span className="nav-brand-mark">dr</span>
           <span className="nav-brand-text">COMPUTER</span>
         </Link>
@@ -50,14 +54,18 @@ export default function Navbar() {
           id="mobile-menu"
           className={`nav-links ${menuOpen ? "is-open" : ""}`}
         >
-          <Link to="/servizi" className="nav-link" onClick={handleClose}>
+          <Link
+            to="/servizi"
+            className={`nav-link ${isServices ? "is-active" : ""}`}
+            onClick={handleClose}
+          >
             Servizi
           </Link>
 
 
           <Link
             to="/contatti"
-            className="nav-link nav-cta"
+            className={`nav-link nav-cta ${isContacts ? "is-active-cta" : ""}`}
             onClick={handleClose}
           >
             Contatti

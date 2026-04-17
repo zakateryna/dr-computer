@@ -2,7 +2,22 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
   gap: 2.3rem;
-  align-items: center;
+  align-items: start;
+}
+
+.contact-media,
+.contact-content {
+  align-self: start;
+}
+
+.contact-content {
+  max-width: 760px;
+}
+
+.contact-media {
+  position: relative;
+  width: 100%;
+  margin-top: 0;
 }
 
 .contact-content {
@@ -285,5 +300,15 @@
 
   .contact-media::after {
     border-radius: 22px;
+  }
+}
+
+#contatti {
+  scroll-margin-top: 120px;
+}
+
+@media (max-width: 900px) {
+  #contatti {
+    scroll-margin-top: 100 px;
   }
 }
