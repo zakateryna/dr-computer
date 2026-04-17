@@ -20,7 +20,12 @@ await fs.mkdir(uploadsDir, { recursive: true });
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "https://dr-computer.it",
+      "https://www.dr-computer.it",
+    ],
   })
 );
 
