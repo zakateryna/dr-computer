@@ -23,6 +23,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "http://localhost:5174",
+      "https://dr-computer.it",
       "https://www.dr-computer.it",
     ],
   })
@@ -57,7 +58,7 @@ const transporter = nodemailer.createTransport({
   secure: process.env.MAIL_SECURE === "true",
   auth: {
     user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS,
+    pass: process.env.MAIL_PASSWORD,
   },
 });
 
