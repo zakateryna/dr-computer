@@ -48,15 +48,15 @@ export default function ContactSection() {
                   <p>Via Piave, 39, 70038 Terlizzi BA</p>
                 </div>
 
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Via+Piave+39+70038+Terlizzi+BA"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="contact-side-btn contact-side-btn-maps"
-                >
-                  <Navigation size={16} strokeWidth={2} />
-                  <span>Apri su Maps</span>
-                </a>
+<a
+  href="https://www.google.com/maps/place/dr+Computer/@41.1280139,16.5439432,17z/data=!3m1!4b1!4m6!3m5!1s0x1347f6170ea57037:0x599c23c688c7961!8m2!3d41.12801!4d16.5485566!16s%2Fg%2F1tcw0x2p?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D"
+  target="_blank"
+  rel="noreferrer"
+  className="contact-side-btn contact-side-btn-maps"
+>
+  <Navigation size={16} strokeWidth={2} />
+  <span>Apri su Maps</span>
+</a>
               </div>
 
               <div className="contact-details-row">
