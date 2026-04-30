@@ -62,6 +62,13 @@ export default function Navbar() {
             Servizi
           </Link>
 
+          <Link
+            to="/bollette"
+            className={`nav-link ${isBills ? "is-active" : ""}`}
+            onClick={handleClose}
+          >
+            Bollette
+          </Link>
 
           <Link
             to="/contatti"
